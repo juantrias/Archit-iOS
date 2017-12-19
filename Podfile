@@ -8,6 +8,8 @@ pod 'XCGLogger'
 target 'Archit' do
 
 pod 'Reusable'
+pod 'RxSwift',    '~> 4.0'
+pod 'RxCocoa',    '~> 4.0'
 pod 'Kingfisher'
 pod 'Kommander'
 
