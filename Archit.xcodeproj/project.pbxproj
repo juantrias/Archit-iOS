@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D35C6E71FE16E9900864E3C /* LoggerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D35C6E61FE16E9800864E3C /* LoggerFactory.swift */; };
+		0D35C6EE1FE173AD00864E3C /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D35C6ED1FE173AD00864E3C /* Logger.swift */; };
+		0D35C6F01FE177A600864E3C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D35C6EF1FE177A600864E3C /* Log.swift */; };
+		0D35C6F21FE1787E00864E3C /* XCGLogger+Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D35C6F11FE1787E00864E3C /* XCGLogger+Logger.swift */; };
+		0D35C6F61FE1791B00864E3C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D35C6F51FE1791B00864E3C /* Log.swift */; };
+		0D35C6FC1FE17DBC00864E3C /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D35C6FB1FE17DBC00864E3C /* ServiceLocator.swift */; };
 		3EEB7D682D5B0E595955661E /* Pods_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73079477914B6D127E59CB7 /* Pods_DomainTests.framework */; };
 		5DDD960198C32755578FCC06 /* Pods_ArchitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE55A12BF45485A5033F2DAC /* Pods_ArchitTests.framework */; };
 		7ACA6D27D75176DE3C94E936 /* Pods_ArchitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBCEB415324D3D8E20DD0FF /* Pods_ArchitUITests.framework */; };
@@ -25,9 +31,6 @@
 		810963E51FB0C42E00B35959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810963E41FB0C42E00B35959 /* AppDelegate.swift */; };
 		810963F81FB0C42E00B35959 /* ArchitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810963F71FB0C42E00B35959 /* ArchitTests.swift */; };
 		810964031FB0C42E00B35959 /* ArchitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810964021FB0C42E00B35959 /* ArchitUITests.swift */; };
-		817ED3511FBDE6D90066A679 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817ED3501FBDE6D90066A679 /* LogManager.swift */; };
-		817ED3541FBDE7BE0066A679 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817ED3501FBDE6D90066A679 /* LogManager.swift */; };
-		817ED3551FBDE7C00066A679 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817ED3501FBDE6D90066A679 /* LogManager.swift */; };
 		8374FD19ACE27BF2EEF1BADF /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5070463760B7BEFCBFA8995E /* Pods_Domain.framework */; };
 		9AC00EF4802746D651A3FFE3 /* Pods_CoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B55B0227AAC528CF431AFE3 /* Pods_CoreTests.framework */; };
 		A4D041333F586D156E01B44E /* Pods_Archit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51036FE5FB812710D2B3A0F7 /* Pods_Archit.framework */; };
@@ -147,6 +150,12 @@
 
 /* Begin PBXFileReference section */
 		0C965850A085A5CD8D2663C6 /* Pods-ArchitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitUITests/Pods-ArchitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0D35C6E61FE16E9800864E3C /* LoggerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerFactory.swift; sourceTree = "<group>"; };
+		0D35C6ED1FE173AD00864E3C /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		0D35C6EF1FE177A600864E3C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		0D35C6F11FE1787E00864E3C /* XCGLogger+Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCGLogger+Logger.swift"; sourceTree = "<group>"; };
+		0D35C6F51FE1791B00864E3C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		0D35C6FB1FE17DBC00864E3C /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		1D22BA66BB0A3D7C4662F2DE /* Pods-Archit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Archit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Archit/Pods-Archit.debug.xcconfig"; sourceTree = "<group>"; };
 		2174FBEAD5708D26C3821F32 /* Pods-DomainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests.release.xcconfig"; sourceTree = "<group>"; };
 		31086010F280804A3BB3FD52 /* Pods-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreTests/Pods-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,7 +205,6 @@
 		810963FE1FB0C42E00B35959 /* ArchitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArchitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		810964021FB0C42E00B35959 /* ArchitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchitUITests.swift; sourceTree = "<group>"; };
 		810964041FB0C42E00B35959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		817ED3501FBDE6D90066A679 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LogManager.swift; path = Source/Managers/LogManager.swift; sourceTree = "<group>"; };
 		9E13B6F1A1B652AB4AD62B18 /* Pods-Domain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.release.xcconfig"; path = "Pods/Target Support Files/Pods-Domain/Pods-Domain.release.xcconfig"; sourceTree = "<group>"; };
 		A73079477914B6D127E59CB7 /* Pods_DomainTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DomainTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE55A12BF45485A5033F2DAC /* Pods_ArchitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArchitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,6 +321,66 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0D35C6E41FE16E3800864E3C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D35C6E51FE16E8500864E3C /* Logger */,
+			);
+			name = Helpers;
+			path = Source/Helpers;
+			sourceTree = "<group>";
+		};
+		0D35C6E51FE16E8500864E3C /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				0D35C6EF1FE177A600864E3C /* Log.swift */,
+				0D35C6E61FE16E9800864E3C /* LoggerFactory.swift */,
+				0D35C6F11FE1787E00864E3C /* XCGLogger+Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		0D35C6EB1FE1737F00864E3C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D35C6EC1FE1739000864E3C /* Logger */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0D35C6EC1FE1739000864E3C /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				0D35C6ED1FE173AD00864E3C /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		0D35C6F31FE178E700864E3C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0D35C6F41FE178F000864E3C /* Logger */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0D35C6F41FE178F000864E3C /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				0D35C6F51FE1791B00864E3C /* Log.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		0D35C6FA1FE17D4C00864E3C /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				0D35C6FB1FE17DBC00864E3C /* ServiceLocator.swift */,
+			);
+			name = Dependencies;
+			path = Source/Dependencies;
+			sourceTree = "<group>";
+		};
 		453EC2F772010FFBE0B63D78 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,6 +405,7 @@
 		8108232C1FB0C594009F0C43 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				0D35C6F31FE178E700864E3C /* Helpers */,
 				D582F4501FB61AA7002BDB91 /* Services */,
 				D582F4431FB38CF1002BDB91 /* Tasks */,
 				D582F4401FB38CF1002BDB91 /* NetworkService.swift */,
@@ -362,6 +431,7 @@
 		8108234F1FB0C5AA009F0C43 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				0D35C6EB1FE1737F00864E3C /* Helpers */,
 				D582F45F1FB62207002BDB91 /* Film.swift */,
 				810823501FB0C5AA009F0C43 /* Domain.h */,
 				810823511FB0C5AA009F0C43 /* Info.plist */,
@@ -426,6 +496,8 @@
 				D582F4351FB22821002BDB91 /* FilmDetail */,
 				D582F42E1FB2273A002BDB91 /* Films */,
 				810963CB1FB0C42E00B35959 /* Base */,
+				0D35C6FA1FE17D4C00864E3C /* Dependencies */,
+				0D35C6E41FE16E3800864E3C /* Helpers */,
 				810963DA1FB0C42E00B35959 /* Managers */,
 			);
 			name = Source;
@@ -471,7 +543,6 @@
 			isa = PBXGroup;
 			children = (
 				810963DB1FB0C42E00B35959 /* AppManager.swift */,
-				817ED3501FBDE6D90066A679 /* LogManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -1315,7 +1386,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				817ED3541FBDE7BE0066A679 /* LogManager.swift in Sources */,
 				D5FF818E1FB8AFD600EAC050 /* NetworkServiceConstants.swift in Sources */,
 				D582F4581FB61C56002BDB91 /* FilmsNetworkTransformer.swift in Sources */,
 				D582F4491FB38CF1002BDB91 /* NetworkService.swift in Sources */,
@@ -1324,6 +1394,7 @@
 				D582F45C1FB61D91002BDB91 /* FilmNetworkModel.swift in Sources */,
 				D5283FAB1FB71A0E008DCA34 /* SearchFilmServiceTask.swift in Sources */,
 				D582F44E1FB38CF1002BDB91 /* ServiceTask.swift in Sources */,
+				0D35C6F61FE1791B00864E3C /* Log.swift in Sources */,
 				D582F44D1FB38CF1002BDB91 /* ServiceTaskProtocol.swift in Sources */,
 				D582F45A1FB61D2F002BDB91 /* SearchFilmsServiceTask.swift in Sources */,
 				D582F45E1FB620D5002BDB91 /* FilmRatingNetworkModel.swift in Sources */,
@@ -1347,8 +1418,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				817ED3551FBDE7C00066A679 /* LogManager.swift in Sources */,
 				D582F4601FB62207002BDB91 /* Film.swift in Sources */,
+				0D35C6EE1FE173AD00864E3C /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1364,9 +1435,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D35C6E71FE16E9900864E3C /* LoggerFactory.swift in Sources */,
 				D582F4311FB2273A002BDB91 /* FilmsViewController.swift in Sources */,
+				0D35C6F01FE177A600864E3C /* Log.swift in Sources */,
 				810963E51FB0C42E00B35959 /* AppDelegate.swift in Sources */,
-				817ED3511FBDE6D90066A679 /* LogManager.swift in Sources */,
+				0D35C6FC1FE17DBC00864E3C /* ServiceLocator.swift in Sources */,
 				D582F4321FB2273A002BDB91 /* FilmsController.swift in Sources */,
 				810963DC1FB0C42E00B35959 /* AppManager.swift in Sources */,
 				D582F4341FB22761002BDB91 /* UITableView+Reusable.swift in Sources */,
@@ -1376,6 +1449,7 @@
 				D582F43C1FB239C4002BDB91 /* BaseInteractor.swift in Sources */,
 				D582F4391FB22822002BDB91 /* FilmDetailViewController.swift in Sources */,
 				D582F43E1FB23A8D002BDB91 /* FilmsInteractor.swift in Sources */,
+				0D35C6F21FE1787E00864E3C /* XCGLogger+Logger.swift in Sources */,
 				D58D1AA01FB2172000721663 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
