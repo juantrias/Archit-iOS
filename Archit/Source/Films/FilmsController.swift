@@ -4,7 +4,7 @@
 
 import Foundation
 import Domain
-import Kommander
+import RxSwift
 
 protocol FilmsControllerProtocol: BaseController {
     var films: [Film] { get }
@@ -24,7 +24,6 @@ class FilmsController: FilmsControllerProtocol {
         }
     }
     private let filmsInteractor: FilmsInteractorProtocol = FilmsInteractor()
-    private weak var filmsSearchKommand: Kommand<(films: [Film], total: Int)>?
     private(set) var query = "Star Wars" {
         didSet {
             viewController?.title = query
@@ -33,9 +32,11 @@ class FilmsController: FilmsControllerProtocol {
     private(set) var type: String = "all"
     private(set) var page: Int = 1
     private var total: Int?
+    private var disposeBag: DisposeBag
 
     required init(_ viewController: FilmsViewController) {
         self.viewController = viewController
+        self.disposeBag = DisposeBag()
     }
 
     func load() {
@@ -43,28 +44,32 @@ class FilmsController: FilmsControllerProtocol {
     }
 
     func willDisappear(_ animated: Bool) {
-        filmsSearchKommand?.cancel()
+        self.disposeBag = DisposeBag()
     }
 
     func search(_ query: String, type: String, page: Int = 1) {
-        guard filmsSearchKommand?.state != .running else {
-            return
-        }
-        filmsSearchKommand = filmsInteractor.films(query, type: FilmsInteractorSearchType(rawValue: type), page: page, onSuccess: { films, total in
-            self.query = query
-            self.type = type
-            self.page = page
-            self.total = total
-            if page == 1 {
-                self.films = films
-            } else {
-                self.films.append(contentsOf: films)
+        // TODO: guard filmsSearchKommand?.state != .running else { return }
+
+        filmsInteractor.films(query, type: FilmsInteractorSearchType(rawValue: type), page: page).subscribe { event in
+            switch event {
+            case .next(let films, let total):
+                self.query = query
+                self.type = type
+                self.page = page
+                self.total = total
+                if page == 1 {
+                    self.films = films
+                } else {
+                    self.films.append(contentsOf: films)
+                }
+            case .error(let error):
+                self.viewController?.showAlert(error.localizedDescription, completion: {
+                    self.viewController?.reloadData()
+                })
+            case .completed:
+                log.debug("completed")
             }
-        }, onError: { error in
-            self.viewController?.showAlert(error.localizedDescription, completion: {
-                self.viewController?.reloadData()
-            })
-        }).execute()
+        }.disposed(by: disposeBag)
     }
 
     func refresh() {

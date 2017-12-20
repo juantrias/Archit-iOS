@@ -4,6 +4,7 @@
 
 import Foundation
 import Kommander
+import RxSwift
 import Domain
 import Core
 
@@ -25,7 +26,6 @@ enum FilmsInteractorError: Error {
 }
 
 typealias FilmsInteractorFilmBlock = (Film) -> Void
-typealias FilmsInteractorFilmsBlock = ([Film], Int) -> Void
 typealias FilmsInteractorErrorBlock = (FilmsInteractorError) -> Void
 
 enum FilmsInteractorSearchType: String {
@@ -34,7 +34,7 @@ enum FilmsInteractorSearchType: String {
 
 protocol FilmsInteractorProtocol {
     func film(_ imdbID: String, type: FilmsInteractorSearchType?, onSuccess: FilmsInteractorFilmBlock?, onError: FilmsInteractorErrorBlock?) -> Kommand<Film>
-    func films(_ query: String, type: FilmsInteractorSearchType?, page: Int, onSuccess: FilmsInteractorFilmsBlock?, onError: FilmsInteractorErrorBlock?) -> Kommand<(films: [Film], total: Int)>
+    func films(_ query: String, type: FilmsInteractorSearchType?, page: Int) -> Observable<([Film], Int)>
 }
 
 class FilmsInteractor: BaseInteractor, FilmsInteractorProtocol {
@@ -52,14 +52,23 @@ class FilmsInteractor: BaseInteractor, FilmsInteractorProtocol {
         })
     }
 
-    func films(_ query: String, type: FilmsInteractorSearchType?, page: Int, onSuccess: FilmsInteractorFilmsBlock?, onError: FilmsInteractorErrorBlock?) -> Kommand<(films: [Film], total: Int)> {
-        return FilmsInteractor.kommander.makeKommand({
-            return try self.filmsService.searchFilms(query, type: type?.rawValue, page: page)
-        }).onSuccess({ result in
-            onSuccess?(result.films, result.total)
-        }).onError({ error in
-            onError?(.filmsError(message: "Error requesting films.", underlying: error))
-        })
+    func films(_ query: String, type: FilmsInteractorSearchType?, page: Int) -> Observable<([Film], Int)> {
+        return Observable.create { observer in
+            let kommand = FilmsInteractor.kommander.makeKommand({
+                return try self.filmsService.searchFilms(query, type: type?.rawValue, page: page)
+            }).onSuccess({ result in
+                observer.on(.next((result.films, result.total)))
+                observer.on(.completed)
+            }).onError({ error in
+                observer.on(.error(FilmsInteractorError.filmsError(message: "Error requesting films.", underlying: error)))
+            })
+
+            kommand.execute()
+
+            return Disposables.create {
+                kommand.cancel()
+            }
+        }
     }
 
 }
