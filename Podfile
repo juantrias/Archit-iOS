@@ -27,7 +27,7 @@ end
 
 target 'Core' do
 
-pod 'NetClient'
+pod 'NetClient', :git => 'https://github.com/intelygenz/NetClient-iOS.git', :branch => '#2-RxNetClient'
 
 end
 
