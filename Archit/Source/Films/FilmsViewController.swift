@@ -5,6 +5,7 @@
 import UIKit
 import Kingfisher
 import Domain
+import RxCocoa
 
 class FilmsViewController: BaseViewController<FilmsController> {
 
@@ -104,7 +105,7 @@ class FilmsViewController: BaseViewController<FilmsController> {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let query = searchBar.text, !query.isEmpty {
             let scope = searchBar.scopeButtonTitles?[searchBar.selectedScopeButtonIndex].lowercased() ?? "all"
-            controller.search(query, type: scope)
+            controller.search(query, type: scope).bind(to: tableView.rx.items(cellIdentifier: "UITableViewCell"))
         }
     }
 

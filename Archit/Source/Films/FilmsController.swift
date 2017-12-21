@@ -4,14 +4,14 @@
 
 import Foundation
 import Domain
-import RxSwift
+import RxCocoa
 
 protocol FilmsControllerProtocol: BaseController {
     var films: [Film] { get }
     var query: String { get }
     var type: String { get }
     var page: Int { get }
-    func search(_ query: String, type: String, page: Int)
+    func search(_ query: String, type: String, page: Int) -> Driver<([Film], Int)>
     func refresh()
     func loadMore()
 }
@@ -47,7 +47,7 @@ class FilmsController: FilmsControllerProtocol {
         self.disposeBag = DisposeBag()
     }
 
-    func search(_ query: String, type: String, page: Int = 1) {
+    func searchOld(_ query: String, type: String, page: Int = 1) {
         // TODO: guard filmsSearchKommand?.state != .running else { return }
 
         filmsInteractor.films(query, type: FilmsInteractorSearchType(rawValue: type), page: page).subscribe { event in
@@ -70,6 +70,12 @@ class FilmsController: FilmsControllerProtocol {
                 log.debug("completed")
             }
         }.disposed(by: disposeBag)
+    }
+
+    func search(_ query: String, type: String, page: Int = 1) -> Driver<([Film], Int)> {
+        // TODO: guard filmsSearchKommand?.state != .running else { return }
+
+        return filmsInteractor.films(query, type: FilmsInteractorSearchType(rawValue: type), page: page).asDriver(onErrorJustReturn: ([], 0))
     }
 
     func refresh() {

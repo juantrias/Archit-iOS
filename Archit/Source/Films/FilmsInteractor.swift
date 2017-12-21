@@ -53,6 +53,8 @@ class FilmsInteractor: BaseInteractor, FilmsInteractorProtocol {
     }
 
     func films(_ query: String, type: FilmsInteractorSearchType?, page: Int) -> Observable<([Film], Int)> {
+        Sing
+
         return Observable.create { observer in
             let kommand = FilmsInteractor.kommander.makeKommand({
                 return try self.filmsService.searchFilms(query, type: type?.rawValue, page: page)
