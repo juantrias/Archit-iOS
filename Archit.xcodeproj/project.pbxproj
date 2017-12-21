@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D614B6A1FEA609F00E804F7 /* ServiceTaskProtocol+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D614B691FEA609F00E804F7 /* ServiceTaskProtocol+Rx.swift */; };
 		3EEB7D682D5B0E595955661E /* Pods_DomainTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A73079477914B6D127E59CB7 /* Pods_DomainTests.framework */; };
 		5DDD960198C32755578FCC06 /* Pods_ArchitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE55A12BF45485A5033F2DAC /* Pods_ArchitTests.framework */; };
 		7ACA6D27D75176DE3C94E936 /* Pods_ArchitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBCEB415324D3D8E20DD0FF /* Pods_ArchitUITests.framework */; };
@@ -147,6 +148,7 @@
 
 /* Begin PBXFileReference section */
 		0C965850A085A5CD8D2663C6 /* Pods-ArchitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArchitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArchitUITests/Pods-ArchitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0D614B691FEA609F00E804F7 /* ServiceTaskProtocol+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServiceTaskProtocol+Rx.swift"; sourceTree = "<group>"; };
 		1D22BA66BB0A3D7C4662F2DE /* Pods-Archit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Archit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Archit/Pods-Archit.debug.xcconfig"; sourceTree = "<group>"; };
 		2174FBEAD5708D26C3821F32 /* Pods-DomainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DomainTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests.release.xcconfig"; sourceTree = "<group>"; };
 		31086010F280804A3BB3FD52 /* Pods-CoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreTests/Pods-CoreTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -311,6 +313,14 @@
 				A73079477914B6D127E59CB7 /* Pods_DomainTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0D614B681FEA601F00E804F7 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				0D614B691FEA609F00E804F7 /* ServiceTaskProtocol+Rx.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		453EC2F772010FFBE0B63D78 /* Pods */ = {
@@ -564,6 +574,7 @@
 		D582F4431FB38CF1002BDB91 /* Tasks */ = {
 			isa = PBXGroup;
 			children = (
+				0D614B681FEA601F00E804F7 /* Rx */,
 				D582F4441FB38CF1002BDB91 /* TaskProtocol.swift */,
 				D582F4451FB38CF1002BDB91 /* ServiceTaskProtocol.swift */,
 				D582F4461FB38CF1002BDB91 /* ServiceTask.swift */,
@@ -960,12 +971,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CoreTests/Pods-CoreTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/NetClient/Net.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Net.framework",
 			);
@@ -1128,11 +1143,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DomainTests/Pods-DomainTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1191,11 +1210,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArchitTests/Pods-ArchitTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1298,12 +1321,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ArchitUITests/Pods-ArchitUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/Cucumberish/Cucumberish.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cucumberish.framework",
 			);
@@ -1323,6 +1350,7 @@
 				D5FF818E1FB8AFD600EAC050 /* NetworkServiceConstants.swift in Sources */,
 				D582F4581FB61C56002BDB91 /* FilmsNetworkTransformer.swift in Sources */,
 				D582F4491FB38CF1002BDB91 /* NetworkService.swift in Sources */,
+				0D614B6A1FEA609F00E804F7 /* ServiceTaskProtocol+Rx.swift in Sources */,
 				D582F4481FB38CF1002BDB91 /* NetworkServiceTransformer.swift in Sources */,
 				D582F4561FB61B5B002BDB91 /* FilmsService.swift in Sources */,
 				D582F45C1FB61D91002BDB91 /* FilmNetworkModel.swift in Sources */,

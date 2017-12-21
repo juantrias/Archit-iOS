@@ -6,7 +6,7 @@ import Foundation
 import Net
 
 open class ServiceTask: ServiceTaskProtocol {
-    private static let net: Net = {
+    static let net: Net = {
         let net = NetURLSession()
         net.addRequestInterceptor { requestBuilder in
             requestBuilder.addURLParameter(NetworkServiceConstants.Parameters.key, value: NetworkServiceConstants.Values.key)

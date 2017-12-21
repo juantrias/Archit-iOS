@@ -2,14 +2,14 @@ platform :ios, '11.0'
 use_frameworks!
 inhibit_all_warnings!
 
+pod 'RxSwift',    '~> 4.0'
+pod 'RxCocoa',    '~> 4.0'
 pod 'SwiftLint'
 pod 'XCGLogger'
 
 target 'Archit' do
 
 pod 'Reusable'
-pod 'RxSwift',    '~> 4.0'
-pod 'RxCocoa',    '~> 4.0'
 pod 'Kingfisher'
 pod 'Kommander'
 
